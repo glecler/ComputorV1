@@ -83,9 +83,14 @@ class Parser:
 	@staticmethod
 	def is_num(string):
 		num = True
+		dot = 0
 		for i in range(len(string)):
+			if string[i] == '.':
+				dot += 1
 			if string[i] == '-' and i == 0:
 				continue
-			if '9' < string[i] or string[i] < '0':
+			if '9' < string[i] or string[i] < '0' and string[i] != '.':
 				num = False
+		if dot > 1:
+			num = False
 		return num
