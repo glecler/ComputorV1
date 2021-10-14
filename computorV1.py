@@ -24,7 +24,7 @@ def main():
 	
 	input = sys.argv[1]
 
-	if (sum(1 for i in input if (i > '9' or i < '0') and i not in ('=', 'X', '^', '-', '+', '*', ' '))):
+	if (sum(1 for i in input if (i > '9' or i < '0') and i not in ('=', 'X', '^', '-', '+', '*', ' ', '.'))):
 		print('Wrong character.')
 		quit()
 	if (sum(1 for i in input if i == '=')) != 1:
